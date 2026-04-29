@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>田舎そば川原 | 恵美子おばあちゃんの台所 — 香川県まんのう町</title>
+<meta name="description" content="香川県まんのう町。料理研究60年、80歳の川原恵美子おばあちゃんが今日も手打ちそばを作っています。YouTube登録者55万人。書籍2冊 KADOKAWA より発売中。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   田舎そば川原 公式HP — 群言堂カラー準拠版
+   色：白 / 和紙 / クリーム / グレージュ / 温かみのある焦茶
+   緑は一切使用しない
+   ============================================================ */
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --white:   #ffffff;
+  --washi:   #f5f0e8;
+  --cream:   #ede8de;
+  --text:    #3d3830;
+  --head:    #2e2820;
+  --btn:     #3d3028;
+  --sub:     #8a8278;
+  --accent:  #9a8870;
+  --border:  #c8bfb0;
+  --muted:   #b0a898;
+  --dark:    #28221a;
+  /* ボタン共通：ホバー茶色 */
+  --btn-hover-color: #8c5c3a;
+  --btn-hover-border: #9a7055;
+  --fs: "Shippori Mincho", "ヒラギノ明朝 ProN", "Hiragino Mincho ProN W3", "游明朝", "Yu Mincho", "HGS明朝E", serif;
+  --fn: "Noto Sans JP", "游ゴシック Medium", "Yu Gothic Medium", "Hiragino Kaku Gothic ProN", sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: var(--fs); background: var(--white); color: var(--text); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+
+/* ── HEADER ── */
+.hdr { position: sticky; top: 0; z-index: 200; background: rgba(255,255,255,.97); border-bottom: 1px solid var(--border); padding: 16px 48px; display: flex; align-items: center; justify-content: space-between; }
+.logo-ja { font-family: var(--fs); font-size: 16px; font-weight: 300; color: var(--btn); letter-spacing: .28em; display: block; }
+.logo-en { font-family: var(--fn); font-size: 8px; font-weight: 200; color: var(--sub); letter-spacing: .42em; display: block; margin-top: 3px; }
+.gnav { display: flex; gap: 24px; list-style: none; align-items: center; }
+.gnav a { font-family: var(--fn); font-size: 11px; font-weight: 200; color: var(--sub); text-decoration: none; letter-spacing: .12em; transition: color .2s; }
+.gnav a:hover { color: var(--btn); }
+.gnav .btn-visit {
+  background: var(--white);
+  border: 1px solid var(--border);
+  color: var(--text) !important;
+  padding: 9px 20px; letter-spacing: .14em;
+  border-radius: 6px; transition: all .28s ease;
+}
+.gnav .btn-visit:hover {
+  background: var(--white);
+  border-color: var(--btn-hover-border);
+  color: var(--btn-hover-color) !important;
+}
+
+/* ── HERO ──
+   修正：暗すぎた漆黒 → 明るめの温かいベージュブラウン（昼の里山の土の色）
+   縦書き数字修正：text-orientation: upright で正立表示
+   ───────────────────────────────────────────────────── */
+.hero { position: relative; height: 100vh; min-height: 600px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+.hero-bg {
+  position: absolute; inset: 0;
+  background: #3a2e22;
+  overflow: hidden;
+}
+.hero-bg img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.hero-ov { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(40,28,16,.12) 0%, rgba(20,12,6,.38) 100%); }
+.hero-body { position: relative; z-index: 2; display: flex; align-items: flex-start; justify-content: center; animation: fu 1.9s ease both; }
+@keyframes fu { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: translateY(0); } }
+.hero-kicker { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -260px); font-family: var(--fn); font-size: 9px; font-weight: 200; color: rgba(255,255,255,.52); letter-spacing: .6em; white-space: nowrap; animation: fu 1.9s .1s ease both; }
+.hero-catch {
+  writing-mode: vertical-rl;
+  text-orientation: upright;   /* 数字・記号を正立表示 */
+  font-family: var(--fs); font-size: 42px; font-weight: 200;
+  color: #fff; letter-spacing: .18em; line-height: 1.7;
+}
+.hero-sub {
+  writing-mode: vertical-rl;
+  text-orientation: upright;   /* 同上 */
+  font-family: var(--fs); font-size: 13px; font-weight: 200;
+  color: rgba(255,255,255,.68); letter-spacing: .12em; line-height: 2;
+  margin-left: 28px; text-align: left;
+  animation: fu 1.9s .32s ease both;
+}
+.hero-scroll { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px; animation: fu 1.9s .7s ease both; }
+.hero-scroll span { font-family: var(--fn); font-size: 8.5px; font-weight: 200; color: rgba(255,255,255,.42); letter-spacing: .5em; }
+.scrl { width: 1px; height: 42px; background: linear-gradient(to bottom, rgba(255,255,255,.48), transparent); animation: scrl 2.2s ease-in-out infinite; }
+@keyframes scrl { 0% { transform: scaleY(0); transform-origin: top; opacity: 1; } 55% { transform: scaleY(1); transform-origin: top; } 100% { transform: scaleY(1); transform-origin: bottom; opacity: 0; } }
+
+/* ── SECTION COMMON ── */
+.sec-wrap { max-width: 880px; margin: 0 auto; padding: 0 48px; }
+.sep { border: none; border-top: 1px solid var(--border); max-width: 880px; margin: 0 auto; }
+.sh { margin-bottom: 48px; }
+.sh-en { font-family: var(--fn); font-size: 9px; font-weight: 300; letter-spacing: .5em; color: var(--accent); margin-bottom: 12px; }
+.sh-ja { font-family: var(--fs); font-size: 22px; font-weight: 500; color: #2a2520; letter-spacing: .12em; padding-bottom: 18px; border-bottom: 1px solid var(--border); }
+.larrow {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-family: var(--fn); font-size: 11px; font-weight: 200;
+  color: var(--text); letter-spacing: .16em; text-decoration: none;
+  border-bottom: 1px solid var(--border); padding-bottom: 2px;
+  transition: all .28s ease;
+}
+.larrow::after { content: '→'; }
+.larrow:hover { color: var(--btn-hover-color); border-color: var(--btn-hover-border); }
+
+/* ── ABOUT ── */
+.about-section { max-width: 880px; margin: 0 auto; padding: 88px 48px 0; }
+.about-head { margin-bottom: 56px; padding-bottom: 20px; border-bottom: 1px solid var(--border); }
+.about-head-label { font-family: var(--fn); font-size: 9px; font-weight: 200; letter-spacing: .52em; color: var(--accent); margin-bottom: 18px; }
+.about-head-title { font-family: var(--fs); font-size: 26px; font-weight: 500; color: #2a2520; line-height: 1.85; letter-spacing: .1em; }
+.about-block1 { display: grid; grid-template-columns: 280px 1fr; gap: 56px; align-items: start; margin-bottom: 56px; }
+.about-photo { width: 100%; aspect-ratio: 3/4; background: linear-gradient(160deg, #a89880 0%, #786850 50%, #4a3828 100%); position: relative; }
+.about-photo::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 35%; background: linear-gradient(to top, rgba(30,20,10,.4), transparent); }
+.photo-note { position: absolute; bottom: 14px; left: 0; right: 0; text-align: center; font-family: var(--fn); font-size: 9px; color: rgba(255,255,255,.35); letter-spacing: .15em; z-index: 1; }
+.about-name-ja { font-family: var(--fs); font-size: 22px; font-weight: 500; color: #2a2520; letter-spacing: .2em; margin-bottom: 5px; }
+.about-name-ruby { font-family: var(--fn); font-size: 10px; font-weight: 300; color: #8a8278; letter-spacing: .28em; margin-bottom: 28px; }
+.body-serif { font-family: var(--fs); font-size: 15px; font-weight: 400; color: #2a2520; line-height: 2.2; letter-spacing: .05em; margin-bottom: 22px; }
+.body-sans { font-family: var(--fn); font-size: 14px; font-weight: 400; color: #3d3830; line-height: 2.2; letter-spacing: .04em; margin-bottom: 20px; }
+.about-block2 { padding: 48px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin-bottom: 56px; }
+.about-block2-inner { max-width: 580px; margin: 0 auto; text-align: center; }
+.about-quote { font-family: var(--fs); font-size: 17px; font-weight: 500; color: #2a2520; line-height: 2.2; letter-spacing: .1em; margin-bottom: 28px; }
+.about-quote-sub { font-family: var(--fn); font-size: 14px; font-weight: 400; color: #3d3830; line-height: 2.2; letter-spacing: .05em; }
+.about-block3 { display: grid; grid-template-columns: 1fr 240px; gap: 48px; align-items: start; margin-bottom: 80px; }
+.about-img-small { width: 100%; aspect-ratio: 3/2; display: flex; align-items: center; justify-content: center; }
+.ai1 { background: linear-gradient(160deg, #b0a088, #6a5840); }
+.ai2 { background: linear-gradient(160deg, #a8a098, #6a6058); }
+.img-note { font-family: var(--fn); font-size: 9px; font-weight: 200; color: var(--muted); letter-spacing: .12em; margin-top: 5px; text-align: right; }
+
+/* ── MENU ── */
+.menu-section { background: var(--washi); padding: 88px 0; }
+.card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 32px; }
+.card { background: var(--white); border: 1px solid rgba(200,191,176,.5); }
+.card-img { width: 100%; aspect-ratio: 1; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 6px; padding: 16px; text-align: center; }
+.ci1 { background: linear-gradient(160deg, #b0a080, #6a5838); }
+.ci2 { background: linear-gradient(160deg, #a8a090, #6a6048); }
+.ci3 { background: linear-gradient(160deg, #989098, #585060); }
+.card-img-title { font-family: var(--fs); font-size: 16px; font-weight: 300; color: rgba(255,255,255,.85); letter-spacing: .1em; }
+.card-img-sub { font-family: var(--fn); font-size: 9px; font-weight: 200; color: rgba(255,255,255,.38); letter-spacing: .14em; }
+.card-body { padding: 18px 16px; }
+.card-cat { font-family: var(--fn); font-size: 8.5px; font-weight: 200; letter-spacing: .38em; color: var(--accent); margin-bottom: 6px; }
+.card-title { font-family: var(--fs); font-size: 14px; font-weight: 400; color: #2a2520; letter-spacing: .06em; margin-bottom: 8px; }
+.card-price { font-family: var(--fn); font-size: 11.5px; font-weight: 300; color: #5a5448; margin-bottom: 14px; }
+.btn-tab {
+  display: block; width: 100%;
+  background: var(--white);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 10px 0; text-align: center;
+  font-family: var(--fn); font-size: 10.5px; font-weight: 200;
+  letter-spacing: .2em; text-decoration: none;
+  border-radius: 6px;
+  transition: all .28s ease;
+}
+.btn-tab:hover {
+  background: var(--white);
+  border-color: var(--btn-hover-border);
+  color: var(--btn-hover-color);
+}
+
+/* ── SNS ── */
+.sns-section { background: var(--white); padding: 88px 48px; }
+.sns-row { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+.sns-block { display: flex; flex-direction: column; }
+.sns-block-head { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 18px; gap: 12px; }
+.sns-title { font-family: var(--fs); font-size: 18px; font-weight: 500; color: #2a2520; letter-spacing: .12em; margin-bottom: 4px; }
+.sns-handle { font-family: var(--fn); font-size: 9.5px; font-weight: 200; color: var(--sub); letter-spacing: .14em; }
+.sns-follow-btn {
+  flex-shrink: 0;
+  display: inline-block;
+  background: var(--white);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 7px 16px;
+  font-family: var(--fn); font-size: 10px; font-weight: 200;
+  letter-spacing: .14em; text-decoration: none;
+  white-space: nowrap; border-radius: 6px; transition: all .28s ease;
+}
+.sns-follow-btn:hover {
+  background: var(--white);
+  border-color: var(--btn-hover-border);
+  color: var(--btn-hover-color);
+}
+
+/* Instagram 1枚 */
+.ig-single-wrap { display: block; text-decoration: none; overflow: hidden; margin-bottom: 16px; transition: opacity .22s; }
+.ig-single-wrap:hover { opacity: .85; }
+.ig-single-img { width: 100%; display: block; object-fit: cover; }
+
+.yt-single-wrap {
+  display: block; text-decoration: none;
+  position: relative; overflow: hidden;
+  margin-bottom: 6px; transition: opacity .22s;
+}
+.yt-single-wrap:hover { opacity: .85; }
+.yt-single-img { width: 100%; display: block; object-fit: cover; }
+.yt-play-icon {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: 56px; height: 56px; border-radius: 50%;
+  background: rgba(0,0,0,.35); border: 2px solid rgba(255,255,255,.7);
+  display: flex; align-items: center; justify-content: center;
+  pointer-events: none;
+}
+.yt-play-tri {
+  width: 0; height: 0;
+  border-top: 11px solid transparent; border-bottom: 11px solid transparent;
+  border-left: 18px solid rgba(255,255,255,.9); margin-left: 4px;
+}
+.yt-subs { font-family: var(--fn); font-size: 12px; font-weight: 300; color: var(--sub); }
+.yt-subs strong { font-weight: 400; color: var(--accent); font-size: 14px; }
+
+/* ── BOOKS ── */
+.book-section { background: var(--cream); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 88px 48px; text-align: center; }
+.book-inner { max-width: 960px; margin: 0 auto; }
+.bcen { font-family: var(--fn); font-size: 9px; font-weight: 200; letter-spacing: .5em; color: var(--accent); margin-bottom: 16px; }
+.bch2 { font-family: var(--fs); font-size: 22px; font-weight: 500; color: #2a2520; line-height: 2; letter-spacing: .1em; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--border); }
+.bcbody { font-family: var(--fn); font-size: 14px; font-weight: 400; color: #3d3830; line-height: 2.2; letter-spacing: .04em; margin-bottom: 36px; }
+.book-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 36px; text-align: left; }
+.book-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 36px; text-align: left; }
+.btn-amazon {
+  display: inline-flex; align-items: center; gap: 7px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 13px 30px;
+  font-family: var(--fn); font-size: 11px; font-weight: 200;
+  letter-spacing: .18em; text-decoration: none;
+  border-radius: 6px;
+  transition: all .28s ease;
+}
+.btn-amazon:hover {
+  background: var(--white);
+  border-color: var(--btn-hover-border);
+  color: var(--btn-hover-color);
+}
+.btn-amazon-sub {
+  display: inline-flex; align-items: center; gap: 7px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 13px 30px;
+  font-family: var(--fn); font-size: 11px; font-weight: 200;
+  letter-spacing: .18em; text-decoration: none;
+  border-radius: 6px;
+  margin-left: 12px;
+  transition: all .28s ease;
+}
+.btn-amazon-sub:hover {
+  background: var(--white);
+  border-color: var(--btn-hover-border);
+  color: var(--btn-hover-color);
+}
+
+/* ── VISIT ──
+   修正：漆黒 #2a221a → 明るいナチュラル var(--washi) 和紙色
+   テキスト・ボーダーも白系→暗色系に変更
+   ───────────────────────────────────────────────────── */
+.visit-section { background: var(--washi); padding: 88px 48px; }
+.visit-inner { max-width: 880px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+.visit-img { aspect-ratio: 4/3; background: linear-gradient(160deg, #b0a088, #786858, #4a3828); position: relative; }
+.visit-img-note { position: absolute; bottom: 12px; left: 0; right: 0; text-align: center; font-family: var(--fn); font-size: 9px; color: rgba(255,255,255,.35); letter-spacing: .14em; }
+.vlbl { font-family: var(--fn); font-size: 9px; font-weight: 200; letter-spacing: .48em; color: var(--accent); display: flex; align-items: center; gap: 9px; margin-bottom: 18px; }
+.vlbl::after { content: ''; width: 22px; height: 1px; background: var(--border); }
+.vh2 { font-family: var(--fs); font-size: 22px; font-weight: 500; color: #2a2520; line-height: 2; letter-spacing: .12em; margin-bottom: 22px; }
+.vbody { font-family: var(--fn); font-size: 14px; font-weight: 400; color: #3d3830; line-height: 2.2; letter-spacing: .04em; margin-bottom: 28px; }
+.vtable { width: 100%; border-collapse: collapse; margin-bottom: 28px; }
+.vtable tr { border-bottom: 1px solid var(--border); }
+.vtable td { padding: 11px 0; font-family: var(--fn); font-size: 13px; font-weight: 400; }
+.vtable td:first-child { color: var(--accent); letter-spacing: .2em; font-size: 9.5px; width: 72px; vertical-align: top; padding-top: 13px; }
+.vtable td:last-child { color: var(--text); line-height: 1.85; }
+.holiday { display: inline-block; border: 1px solid var(--border); color: var(--sub); font-size: 9px; padding: 1px 7px; margin-left: 5px; letter-spacing: .08em; }
+.btn-map {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 12px 28px;
+  font-family: var(--fn); font-size: 10.5px; font-weight: 200;
+  letter-spacing: .2em; text-decoration: none;
+  border-radius: 6px;
+  transition: all .28s ease;
+}
+.btn-map::after { content: '→'; }
+.btn-map:hover {
+  background: var(--white);
+  border-color: var(--btn-hover-border);
+  color: var(--btn-hover-color);
+}
+
+/* ── FOOTER ── */
+.footer { background: var(--white); border-top: 1px solid var(--border); padding: 60px 48px 40px; }
+.footer-inner { max-width: 880px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 44px; margin-bottom: 44px; }
+.fl-ja { font-family: var(--fs); font-size: 16px; font-weight: 300; color: var(--head); letter-spacing: .22em; margin-bottom: 4px; }
+.fl-en { font-family: var(--fn); font-size: 8px; font-weight: 200; letter-spacing: .38em; color: var(--sub); margin-bottom: 18px; }
+.fmsg { font-family: var(--fs); font-size: 13px; font-weight: 400; color: #3d3830; line-height: 2.3; letter-spacing: .05em; }
+.fcol-title { font-family: var(--fn); font-size: 8.5px; font-weight: 200; letter-spacing: .42em; color: var(--accent); margin-bottom: 14px; }
+.fnav { list-style: none; }
+.fnav li { border-bottom: 1px solid rgba(200,191,176,.35); }
+.fnav a { display: block; padding: 9px 0; font-family: var(--fn); font-size: 11.5px; font-weight: 300; color: #3d3830; text-decoration: none; letter-spacing: .08em; transition: color .2s; }
+.fnav a:hover { color: var(--btn); }
+.finfo-lbl { font-family: var(--fn); font-size: 8.5px; font-weight: 200; letter-spacing: .35em; color: var(--sub); margin-bottom: 3px; }
+.finfo-val { font-family: var(--fn); font-size: 11.5px; font-weight: 300; color: #3d3830; line-height: 1.8; letter-spacing: .04em; margin-bottom: 14px; }
+.footer-bottom { max-width: 880px; margin: 0 auto; padding-top: 24px; border-top: 1px solid rgba(200,191,176,.35); display: flex; align-items: center; justify-content: space-between; }
+.fsns { display: flex; gap: 18px; }
+.fsns a { font-family: var(--fn); font-size: 9.5px; font-weight: 200; color: var(--sub); text-decoration: none; letter-spacing: .1em; border-bottom: 1px solid var(--border); padding-bottom: 1px; transition: color .2s; }
+.fsns a:hover { color: var(--btn); }
+.fcopy { font-family: var(--fn); font-size: 9.5px; font-weight: 200; color: var(--muted); letter-spacing: .08em; }
+
+/* ── SCROLL REVEAL ── */
+.rv { opacity: 0; transform: translateY(26px); transition: opacity .85s ease, transform .85s ease; }
+.rv.in { opacity: 1; transform: translateY(0); }
+.rv.d1 { transition-delay: .14s; }
+.rv.d2 { transition-delay: .28s; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hdr">
+  <div>
+    <span class="logo-ja">田舎そば川原</span>
+    <span class="logo-en">INAKASOBA KAWAHARA · MANNO, KAGAWA</span>
+  </div>
+  <ul class="gnav">
+    <li><a href="#about">おばあちゃんについて</a></li>
+    <li><a href="#menu">お品書き</a></li>
+    <li><a href="#sns">SNS</a></li>
+    <li><a href="#books">書籍</a></li>
+    <li><a href="#visit" class="btn-visit">会いに行く</a></li>
+  </ul>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg">
+    <img
+      src="https://raw.githubusercontent.com/chebiphoto/inakasobakawahara/main/hero-satoyama-mannocho-kagawa.webp"
+      alt="香川県まんのう町の里山風景"
+      style="width:100%;height:100%;object-fit:cover;display:block;"
+      loading="eager"
+    >
+  </div>
+  <div class="hero-ov"></div>
+  <p class="hero-kicker">KAGAWA · MANNO · SINCE 1980s</p>
+  <div class="hero-body">
+    <h1 class="hero-catch">足りないを、おいしいに。</h1>
+    <p class="hero-sub">香川県まんのう町の山あいに、<br>一軒のそば屋があります。<br>料理研究六十年。<br>八十歳の恵美子おばあちゃんが<br>今日も手打ちで、心を込めて。</p>
+  </div>
+  <div class="hero-scroll">
+    <div class="scrl"></div>
+    <span>SCROLL</span>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about-section rv">
+  <div class="about-head">
+    <p class="about-head-label">ABOUT — 川原恵美子について</p>
+    <h2 class="about-head-title">今が青春。<br>体力の続く限り、料理を皆さんへ。</h2>
+  </div>
+  <div class="about-block1">
+    <div class="about-photo">
+      <div class="photo-note">お写真をここに配置</div>
+    </div>
+    <div>
+      <p class="about-name-ja">川原 恵美子</p>
+      <p class="about-name-ruby">かわはら えみこ</p>
+      <p class="body-serif">1946年、香川県生まれ。</p>
+      <p class="body-sans">農家の嫁として、野菜をつくり、料理をする。それがあたりまえの日々でした。季節ごとに採れるものを、無駄なく、おいしく。そのくり返しのなかで、気がつけば60年の料理研究が積み上がっていました。</p>
+      <p class="body-sans">香川県仲多度郡まんのう町炭所東に「田舎そば川原」を開いたのは、それから15年ほどのこと。山あいの小さなそば屋で、地元の農家さんが丹精込めた野菜を使い、手打ちのそばをお出しする日々が始まりました。</p>
+      <p class="body-sans">野菜の皮も、だしがらも、冷蔵庫の残り物も——「足りない」と思っていたものが、実は宝物だったと気づいたのは、この台所のなかでのことです。</p>
+    </div>
+  </div>
+  <div class="about-block2">
+    <div class="about-block2-inner">
+      <p class="about-quote">「地元の役に立ちたい。<br>若い世代に、料理の知恵を残したい。」</p>
+      <p class="about-quote-sub">
+        2020年8月、そんな思いでYouTubeチャンネルを始めました。<br>
+        「そうめん ゆでるな！」という一本の動画がきっかけで、<br>
+        またたくまに登録者数は55万人を超えました。<br><br>
+        テレビへの出演、KADOKAWAからのレシピ本出版。<br>
+        けれどおばあちゃんは変わらず、今日もまんのう町で<br>
+        そばを打ち、漬物を漬けています。
+      </p>
+    </div>
+  </div>
+  <div class="about-block3">
+    <div>
+      <p class="body-serif">昔ながらの手法に、現代の知恵をそっと加えて。</p>
+      <p class="body-sans">おばあちゃんのレシピには、難しいことが一つもありません。特別な食材も、特別な道具も要りません。ただ、季節のものと向き合い、丁寧に手を動かすだけでいい。</p>
+      <p class="body-sans">「着て楽、食べて楽」を信条に、体にやさしく、食べてほっとする料理を作り続けています。病気知らずで80歳を迎えたその台所には、私たちが忘れかけていた暮らしの知恵が、今もたくさん残っています。</p>
+      <p class="body-sans">木・金以外は毎日、厨房に立っています。<br>お気軽に、会いにいらしてください。</p>
+    </div>
+    <div>
+      <div class="about-img-small ai1">
+        <span style="font-family:var(--fn);font-size:9px;color:rgba(255,255,255,.35);letter-spacing:.14em;">お写真をここに</span>
+      </div>
+      <p class="img-note">手打ちそばの仕込み</p>
+      <div class="about-img-small ai2" style="margin-top:12px;">
+        <span style="font-family:var(--fn);font-size:9px;color:rgba(255,255,255,.35);letter-spacing:.14em;">お写真をここに</span>
+      </div>
+      <p class="img-note">まんのう町の台所にて</p>
+    </div>
+  </div>
+</section>
+
+<hr class="sep">
+
+<!-- MENU -->
+<section id="menu" class="menu-section">
+  <div class="sec-wrap">
+    <div class="sh rv">
+      <p class="sh-en">MENU — お品書き</p>
+      <h2 class="sh-ja">手打ちのそば、心の味</h2>
+    </div>
+    <div class="card-grid">
+      <div class="card rv">
+        <div class="card-img ci1"><span class="card-img-title">ざるそば</span><span class="card-img-sub">お写真をここに</span></div>
+        <div class="card-body"><p class="card-cat">SIGNATURE</p><p class="card-title">ざるそば</p><p class="card-price">¥ 900〜</p><a class="btn-tab" href="https://tabelog.com/kagawa/A3703/A370302/37004785/" target="_blank">食べログで見る</a></div>
+      </div>
+      <div class="card rv d1">
+        <div class="card-img ci2"><span class="card-img-title">山菜そば</span><span class="card-img-sub">お写真をここに</span></div>
+        <div class="card-body"><p class="card-cat">SEASONAL</p><p class="card-title">山菜そば</p><p class="card-price">¥ 1,000〜</p><a class="btn-tab" href="https://tabelog.com/kagawa/A3703/A370302/37004785/" target="_blank">食べログで見る</a></div>
+      </div>
+      <div class="card rv d2">
+        <div class="card-img ci3"><span class="card-img-title">季節の定食</span><span class="card-img-sub">お写真をここに</span></div>
+        <div class="card-body"><p class="card-cat">SET MENU</p><p class="card-title">季節の定食</p><p class="card-price">¥ 1,200〜</p><a class="btn-tab" href="https://tabelog.com/kagawa/A3703/A370302/37004785/" target="_blank">食べログで見る</a></div>
+      </div>
+    </div>
+    <p style="text-align:center;" class="rv">
+      <a class="larrow" href="https://tabelog.com/kagawa/A3703/A370302/37004785/" target="_blank" style="justify-content:center;">食べログで口コミ・写真171枚を見る</a>
+    </p>
+  </div>
+</section>
+
+<!-- SNS -->
+<section id="sns" class="sns-section rv">
+  <div class="sec-wrap">
+    <div class="sh" style="margin-bottom:52px;">
+      <p class="sh-en">SNS — フォローする</p>
+      <h2 class="sh-ja">おばあちゃんの毎日を、一緒に。</h2>
+    </div>
+    <div class="sns-row">
+
+      <!-- Instagram -->
+      <div class="sns-block">
+        <div class="sns-block-head">
+          <div>
+            <h3 class="sns-title">Instagram</h3>
+            <p class="sns-handle">@inakasoba_kawahara · フォロワー 2.8万人</p>
+          </div>
+          <a class="sns-follow-btn" href="https://www.instagram.com/inakasoba_kawahara/" target="_blank">フォローする</a>
+        </div>
+        <!--
+          ★ 写真の差し替え方 ★
+          インスタのスクリーンショットを6枚用意し、
+          ig-ph クラスの div を下記のように img タグに差し替えてください。
+          例：<img src="images/insta01.jpg" alt="投稿①">
+          ※ images フォルダをこのHTMLと同じ場所に置いてください
+        -->
+        <a href="https://www.instagram.com/inakasoba_kawahara/" target="_blank" class="ig-single-wrap">
+          <img
+            src="https://raw.githubusercontent.com/chebiphoto/inakasobakawahara/main/instagram-kawahara-emiko.webp"
+            alt="川原恵美子おばあちゃんのInstagram投稿"
+            class="ig-single-img"
+            loading="lazy"
+          >
+        </a>
+        <a class="larrow" href="https://www.instagram.com/inakasoba_kawahara/" target="_blank">@inakasoba_kawahara をフォローする</a>
+      </div>
+
+      <!-- YouTube -->
+      <div class="sns-block">
+        <div class="sns-block-head">
+          <div>
+            <h3 class="sns-title">YouTube</h3>
+            <p class="sns-handle">恵美子さんの料理帖〜川原おばあちゃんの知恵袋〜</p>
+          </div>
+          <a class="sns-follow-btn" href="https://www.youtube.com/@K.EMIKO2024" target="_blank">チャンネル登録</a>
+        </div>
+        <!--
+          ★ YouTube サムネイル画像の差し替え方 ★
+          各動画のサムネイル画像（スクリーンショット）を用意し、
+          yt-thumb-ph の div を <img> タグに差し替えてください。
+          各リンクの href に動画URLを入れると、クリックでその動画に飛びます。
+          例：href="https://www.youtube.com/watch?v=XXXXXXXXXXX"
+        -->
+        <a href="https://www.youtube.com/@K.EMIKO2024" target="_blank" class="yt-single-wrap">
+          <img
+            src="https://raw.githubusercontent.com/chebiphoto/inakasobakawahara/main/youtube-kawahara-emiko-thumbnail.webp"
+            alt="川原恵美子おばあちゃんのYouTubeチャンネル動画"
+            class="yt-single-img"
+            loading="lazy"
+          >
+          <div class="yt-play-icon">
+            <div class="yt-play-tri"></div>
+          </div>
+        </a>
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-top:16px;flex-wrap:wrap;gap:12px;">
+          <p class="yt-subs">登録者 <strong>2万人+</strong></p>
+          <a class="larrow" href="https://www.youtube.com/@K.EMIKO2024" target="_blank">すべての動画を見る</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- BOOKS -->
+<section id="books" class="book-section rv">
+  <div class="book-inner">
+    <p class="bcen">BOOKS — 書籍のご購入</p>
+    <h2 class="bch2">60年分の知恵を、あなたの食卓へ。</h2>
+    <p class="bcbody">3冊の著書を発売中です。レシピ本から人生哲学まで——おばあちゃんの言葉と知恵が、やさしく詰まっています。</p>
+    <div class="book-grid-3">
+      <div class="card">
+        <div class="card-img ci1"><span class="card-img-title">恵美子さんの料理帖</span><span class="card-img-sub">書影をここに</span></div>
+        <div class="card-body">
+          <p class="card-cat">1st BOOK · 2022 · KADOKAWA</p>
+          <p class="card-title">「田舎そば川原」<br>恵美子さんの料理帖</p>
+          <p class="card-price">¥ 1,540（税込）</p>
+          <a class="btn-tab" href="https://www.amazon.co.jp/dp/4048971662" target="_blank">Amazonで購入する</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img ci2"><span class="card-img-title">ひとつひとつ、<br>たいせつに。</span><span class="card-img-sub">書影をここに</span></div>
+        <div class="card-body">
+          <p class="card-cat">2nd BOOK · NHK出版</p>
+          <p class="card-title">ひとつひとつ、たいせつに。<br>75歳ユーチューバー・恵美子さんが見つけた幸せ術</p>
+          <p class="card-price">¥ 1,530（税込）</p>
+          <a class="btn-tab" href="https://www.amazon.co.jp/dp/4815613656" target="_blank">Amazonで購入する</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img ci3"><span class="card-img-title">恵美子さんの<br>整う常備菜</span><span class="card-img-sub">書影をここに</span></div>
+        <div class="card-body">
+          <p class="card-cat">3rd BOOK · 2023 · KADOKAWA</p>
+          <p class="card-title">「田舎そば川原」<br>恵美子さんの整う常備菜</p>
+          <p class="card-price">¥ 1,760（税込）</p>
+          <a class="btn-tab" href="https://www.amazon.co.jp/dp/4046064463" target="_blank">Amazonで購入する</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISIT -->
+<section id="visit" class="visit-section rv">
+  <div class="visit-inner">
+    <div class="visit-img">
+      <div class="visit-img-note">お店のお写真をここに</div>
+    </div>
+    <div>
+      <p class="vlbl">ACCESS — 会いに来ぃまいねぇ</p>
+      <h2 class="vh2">まんのう町で、<br>お待ちしています。</h2>
+      <p class="vbody">木・金以外は毎日、おばあちゃんが厨房に立っています。なくなり次第終了となりますので、お早めにお越しください。</p>
+      <table class="vtable">
+        <tr><td>住所</td><td>香川県仲多度郡まんのう町<br>炭所東3239-1</td></tr>
+        <tr><td>TEL</td><td><a href="tel:0877794770" style="color:var(--text);text-decoration:none;">0877-79-2670</a></td></tr>
+        <tr><td>営業日</td><td>月・火・水・土・日<br>昼営業（なくなり次第終了）</td></tr>
+        <tr><td>定休日</td><td>木曜日・金曜日<span class="holiday">定休</span></td></tr>
+        <tr><td>駐車場</td><td>あり</td></tr>
+      </table>
+      <a class="btn-map" href="https://goo.gl/maps/zySHiXbvqtdZTfqx8" target="_blank">Google マップで見る</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <p class="fl-ja">田舎そば川原</p>
+      <p class="fl-en">INAKASOBA KAWAHARA</p>
+      <p class="fmsg">里山の自然に包まれた<br>まんのう町の台所から。<br>今日もおばあちゃんは<br>そばを打っています。</p>
+    </div>
+    <div>
+      <p class="fcol-title">NAVIGATION</p>
+      <ul class="fnav">
+        <li><a href="#about">おばあちゃんについて</a></li>
+        <li><a href="#menu">お品書き</a></li>
+        <li><a href="#sns">Instagram / YouTube</a></li>
+        <li><a href="#books">書籍のご購入</a></li>
+        <li><a href="#visit">アクセス</a></li>
+        <li><a href="https://tabelog.com/kagawa/A3703/A370302/37004785/" target="_blank">食べログ</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="fcol-title">STORE INFO</p>
+      <p class="finfo-lbl">ADDRESS</p><p class="finfo-val">香川県仲多度郡まんのう町<br>炭所東3239-1</p>
+      <p class="finfo-lbl">TEL</p><p class="finfo-val">0877-79-2670</p>
+      <p class="finfo-lbl">HOURS</p><p class="finfo-val">月・火・水・土・日 昼営業</p>
+      <p class="finfo-lbl">CLOSED</p><p class="finfo-val">木曜日・金曜日</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="fsns">
+      <a href="https://www.instagram.com/inakasoba_kawahara/" target="_blank">Instagram</a>
+      <a href="https://www.youtube.com/channel/UCFynCF7lYzi8NWhCqHh2DCQ" target="_blank">YouTube</a>
+      <a href="https://tabelog.com/kagawa/A3703/A370302/37004785/" target="_blank">食べログ</a>
+    </div>
+    <p class="fcopy">© 田舎そば川原 All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script>
+const obs = new IntersectionObserver(
+  entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); }),
+  { threshold: 0.08 }
+);
+document.querySelectorAll('.rv').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
